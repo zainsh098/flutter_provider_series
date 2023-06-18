@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_series/Counter.dart';
-import 'package:flutter_provider_series/provider/count%20provider.dart';
 
-import 'package:flutter_provider_series/utils/Provider%20Class%203.dart';
+import 'package:flutter_provider_series/provider/count%20provider.dart';
+import 'package:flutter_provider_series/utils/provider_class4.dart';
+
+
 import 'package:provider/provider.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: Class3() ,
+            home: Class4() ,
           );
 
 
