@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_series/provider/favouriteExample.dart';
+import 'package:flutter_provider_series/screen/MostFaV.dart';
 import 'package:provider/provider.dart';
 
 class FavouriteScreen extends StatefulWidget {
@@ -15,11 +16,19 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
   Widget build(BuildContext context) {
 
-    final proSelect=Provider.of<FavouriteExample>(context);
+
     print('Build ');
     return Scaffold(
       appBar: AppBar(
         title: Text('Provider Favourite  Example '),
+
+        actions: [InkWell(
+            onTap: () {
+
+              Navigator.push(context, MaterialPageRoute(builder:(context) =>MostFavScreen() ,));
+            },
+
+            child: Icon(Icons.favorite))],
       ),
       body: Column(
         children: [
@@ -35,21 +44,23 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                         {
 
 
-                          proSelect.unSelected(index);
+                          value.unSelected(index);
                         }
                         else
                         {
-                          proSelect.Selected(index);
+                          value.Selected(index);
 
 
                         }
 
-                        setState(() {});
+
                       },
                       title: Text('Item' + index.toString()),
-                      trailing: proSelect.favourite.contains(index)
-                          ? Icon(Icons.favorite)
-                          : Icon(Icons.favorite_border_outlined),
+                      trailing:  Icon(value.favourite.contains(index) ? Icons.favorite : Icons.favorite_border_outlined),
+
+
+
+
                     );
 
 
