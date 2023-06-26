@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_series/provider/theme_mode.dart';
 import 'package:flutter_provider_series/screen/LightDarkMode.dart';
+import 'package:flutter_provider_series/screen/Notify.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -23,8 +24,11 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
             ),
             themeMode: themeChanger.themeMode,
-            darkTheme: ThemeData(brightness: Brightness.dark),
-            home: Mode(),
+            darkTheme: ThemeData(brightness: Brightness.dark,
+             appBarTheme: AppBarTheme(backgroundColor: Colors.amber)
+
+            ),
+            home: Notify(),
           );
         },
       ),
